@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>IWP DA2 REGISTER</title>
+    </head>
+</html>
+<body>
+    <style>
+        body {
+            background-color: #52B3BA;
+        }
+        h1 {
+            text-align: center;
+            background-color: #25696E;
+            padding: 10px;
+            margin: 10px;
+            font-family: monospace;
+        }
+        button {
+            margin-top: 15px;
+        }
+        .center {
+            display: flex;
+			align-items: center;
+			justify-content: center;
+        }
+        .mainform {
+            width: 600px;
+            background-color: rgb(37, 105, 110, 0.4);
+            padding: 10px;
+            border: 5px solid #6B6B6B;
+            border-radius: 5px;
+            font-family: monospace;
+            box-shadow: 0 30px 30px rgba(0,0,0,0.20), 0 15px 15px rgba(0,0,0,0.43);
+        }
+        .right {
+            position: relative;
+            left: 20px;
+        }
+        .left{
+            position: relative;
+            left: 10px;
+        }
+        .details {
+            text-align: justify;
+            font-size: 14px;;
+        }
+        span {
+            color: red;
+        }
+        [type='radio']{
+            margin: 0px 0px 0px 5px;
+        }
+        [type='checkbox']{
+            margin: 0px 0px 0px 5px;
+        }
+        .text_container{
+            width: 550px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px dashed black;
+            border-radius: 5px;
+        }
+        .butt_design {
+            padding: 5px 5px 5px 5px;
+            margin: 5px 0px 5px 0px;
+            font-weight: bold; 
+        }
+        #hours{
+            width: 70px;
+        }
+
+        button{
+            border-radius: 5px;
+        }
+        button:hover{
+            width: 100px;
+            height: 35px;
+            background-color: wheat;
+            border-radius: 5px;
+        }
+    </style>
+    
+    <script>
+        function validatename() {
+
+            let x = document.forms["mainform"]["email"].value;
+            let t = x.search("@gmail.com")
+            if (t == -1) {
+                alert("Fill in with proper Gmail");
+                return false;
+            }
+
+            let y = document.forms["mainform"]["fname"].value;
+            if (y == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            let z = document.forms["mainform"]["hours"].value;
+            if(z < 4 || z > 8) {
+                alert("Number of hours should be more than or equal to 4 and less than 8");
+                return false;
+            } 
+        }
+    </script>
+
+    <div class="center">
+        <div class="mainform">
+            <div>
+                <h1> Internship Registration Form </h1><br>
+            </div>
+
+            <div class="center">
+                <div class="text_container ">
+                    <p class="details">
+                        Hello, this form is for those students who want to apply for the Summer Internship Program of our company. 
+                        We request all of the interested students to fill the following form with the correct details. 
+                        Only the students with 8.0+ CGPA will be allowed to take part in the selection process. 
+                        Further details will be sent to you via mail. <br> <br>
+                        Thank You 
+                    </p>
+                </div><br>
+            </div>
+
+
+
+            <form action="./IWP2_home.html" name="mainform" method="GET" onsubmit="return validatename()">
+                <div class="right">
+                    <h3> 1. Enter your Name <span>*</span></h3>
+
+                    <label for="fname" class="left">
+                        <input type="text" name="fname" placeholder="Enter Your Name" >
+                    </label><br>
+
+                    <h3> 2. Enter your email id <span>*</span></h3>
+
+                    <label for="email" class="left">
+                        <input type="email" id="email" placeholder="Enter Your Email-id" name="email">
+                    </label>
+
+                    <h3> 3. Enter your phone number <span>*</span></h3>
+
+                    <label for="phone" class="left">
+                        <input type="tel" id="phone" name="phone" placeholder="123-4567-789" pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}" required>
+                    </label><br>
+
+                    <h3> 4. Select your college <span>*</span></h3>
+
+                    <label for="college" class="left">
+                        <input type="text" list="college" placeholder="Select Your College" required>
+                        <datalist id="college" name="college">
+                            <option value="VIT"> Vellore Institute of Technology </option>
+                            <option value="RV"> RV College of Engineering </option>
+                            <option value="PES"> PES University </option>
+                            <option value="BMS"> BMS College of Engineering </option>
+                        </datalist>
+                    </label>
+
+
+                    <h3> 5. Which year are you in? <span>*</span></h3>
+
+                    <label for="year2" class="left">
+                        <input id="year2" type="radio" name="year" value="2nd_year" > 2nd year
+                    </label><br>
+                    <label for="year3" class="left">
+                        <input id="year3" type="radio" name="year" value="3rd_year" > 3rd year
+                    </label><br>
+                    <label for="year4" class="left">
+                        <input id="year4" type="radio" name="year" value="4th_year" > 4th year
+                    </label><br>
+                    
+                    <h3> 6. Which of these concepts do you know? <span>*</span></h3>
+
+                    <label for="Htm" class="left">
+                        <input id="htm" type="checkbox" name="concepts" value="html"> HTML
+                    </label><br>
+                    <label for="css" class="left">
+                        <input id="css" type="checkbox" name="concepts" value="css"> CSS
+                    </label><br>
+                    <label for="javas" class="left">
+                        <input id="javas" type="checkbox" name="concepts" value="javascript"> Javascript
+                    </label><br>
+                    <label for="SQL" class="left">
+                        <input id="SQL" type="checkbox" name="concepts" value="sql"> SQL
+                    </label><br>
+
+                    <h3> 7. How many hours are you willing to work per week? <span>*</span></h3>
+
+                    <label for="hours" class="left">
+                        <input type="text" id="hours" name="hours" placeholder="6" >
+                    </label>
+
+                    <h3> 8. Submit your Resume (Optional) </h3>
+
+                    <label for="myfile" class="left">
+                        <input type="file" id="myfile" name="myfile">
+                    </label><br><br>
+
+                    <div class="center ">
+                        <button class="butt_design" type="submit">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
